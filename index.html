@@ -16,7 +16,7 @@
       <ul>
         <li v-for="({quote, author}, index) in quotes" :key="quote">
           <p>{{index +1}} {{ quote }}</p>
-          <blockquote v-if="false">-{{ author }}</blockquote>
+          <blockquote v-if="author">-{{ author }}</blockquote>
         </li>
       </ul>
     </div>
