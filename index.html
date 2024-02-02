@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <meta charset="UTF-8" />
+    <title>VueJs Intro</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <blockquote>{{ author }}</blockquote>
+      <button @click="changeMessage">Change Message</button>
+
+      <h2>Batman quotes:</h2>
+      <input type="text" v-model="newQuote" v-on:keypress.enter="addQuote" />
+      <ul>
+        <li v-for="({quote, author}, index) in quotes" :key="quote">
+          <p>{{index +1}} {{ quote }}</p>
+          <blockquote v-if="false">-{{ author }}</blockquote>
+        </li>
+      </ul>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
